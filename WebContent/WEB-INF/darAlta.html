@@ -8,29 +8,31 @@
 <H1>AGREGAR NUEVA TARJETA</H1>
 <form method="get" action="DarAlta" name="darAlta" id="darAlta">
 
-	<label for="matricula">Matrícula</label>
-	<input type="text" name="matricula" id="matricula"></input>
+	<label for="numero">NUMERO DE TARJETA DE CREDITO</label>
+	<input type="text" name="numero" id="numero"></input>
 	<br/>
 	
-	<label for="marca">Marca</label>
-	<input type="text" name="marca" id="marca"></input>
+	<label for="cupoMaximo">LIMITE MAXIMO DE INGRESO DE DINERO</label>
+	<input type="text" name="cupoMaximo" id="cupoMaximo"></input>
 	<br/>
 	
-	<label for="modelo">Modelo</label>
-	<input type="text" name="modelo" id="modelo"></input>
+	<label for="cupoDisponible">DINERO DISPONIBLE</label>
+	<input type="text" name="cupoDisponible" id="cupoDisponible"></input>
 	<br/>
 	
-	<label for="color">Color</label>
-	<input type="text" name="color" id="color"></input>
+	<label for="tipo">TIPO DE TARJETA </label><br/>
+	<label for="tipoSi">VISA</label><input type="radio" name="tipo" id="tipoSi" value="true"></input>
+	<label for="tipoNo">MasterCARD</label><input type="radio" name="tipo" id="tipoNo" value="false"></input>
+	
+	
+	<label for="numeroComprobacion">NUMERO DE COMPROBACION DE LA TARJETA</label>
+	<input type="text" name="numeroComprobacion" id="numeroComprobacion"></input>
 	<br/>
 	
-	<label for="numeroCaballos">Número de caballos</label>
-	<input type="text" name="numeroCaballos" id="numeroCaballos"></input>
+	<label for="contraseña">CONTRASEÑA DE LA TARJETA</label>
+	<input type="text" name="contraseña" id="contraseña"></input>
 	<br/>
 	
-	<label for="marchas">Marchas </label><br/>
-	<label for="marchasSi">Manual</label><input type="radio" name="marchas" id="marchasSi" value="true"></input>
-	<label for="marchasNo">Automático</label><input type="radio" name="marchas" id="marchasNo" value="false"></input>
 	
 	
 <input type="submit" name="enviar" id="enviar" value="Enviar"></input>
