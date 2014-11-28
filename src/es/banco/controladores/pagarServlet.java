@@ -10,20 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.banco.modelo.MiBanco;
-import es.banco.modelo.MiBancoWS;
 
 /**
- * Servlet implementation class retirarServlet
+ * Servlet implementation class pagarServlet
  */
-@WebServlet("/retirarServlet")
-public class retirarServlet extends HttpServlet {
+@WebServlet("/pagarServlet")
+public class pagarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private MiBancoWS ab;
+	private Object cantidadPagar;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public retirarServlet() {
+    public pagarServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,24 +32,23 @@ public class retirarServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		//camino a la BD
 		String numero= request.getParameter("numero");
 		String contraseña= request.getParameter("contraseña");
 		String numeroComprobacion= request.getParameter("numeroComprobacion");
-		String cantidadRetirar= request.getParameter("cantidadRetirar");
+		String cantidadPagar= request.getParameter("cantidadPagar");
 		
 	
 		
 		
 		MiBanco b= new MiBanco();
-		String id= b.ingresar(numero,numeroComprobacion, contraseña, cantidadRetirar);
+		String id= b.pagar(numero,numeroComprobacion, contraseña, cantidadPagar);
 		
 		String men;
-		String cantidadRetirar2;
-		cantidadRetirar2= "10";
-		if (cantidadRetirar== cantidadRetirar2){
-			men= b.noAdmitido2();
+		String cantidadPagar2;
+		cantidadPagar2= "0";
+		if (cantidadPagar== cantidadPagar2){
+			men= b.noAdmitido3();
 			
 			request.setAttribute("mensaje",men);
 			RequestDispatcher rd= request.getRequestDispatcher("vistaMensaje.jsp");

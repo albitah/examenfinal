@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
+
+
+
 import es.banco.modelo.TarjetaCredito;
 
 
@@ -80,7 +83,7 @@ public class TarjetaCreditoDAO {
 	
 	
 	
-	public TarjetaCredito cantidadIngresar(int id) {
+	public TarjetaCredito cantidadIngresar(String cantidadIngresar) {
 		
 		TarjetaCredito a= new TarjetaCredito();
 		try {
@@ -90,7 +93,7 @@ public class TarjetaCreditoDAO {
       //2. preparar la consulta
         PreparedStatement ps = cx.prepareStatement("SELECT * FROM TARJETACREDITO WHERE id=?");
         // 2.1 setear los ?
-            ps.setInt(1, id);
+            ps.setString(1, cantidadIngresar);
       // 3, ejecutar la consulta
             ResultSet rs =ps.executeQuery();  
        //4. llenar el objeto pais.. con los datos de respuesta de BBDD..
@@ -116,7 +119,7 @@ public class TarjetaCreditoDAO {
 		return a;
 	}
 	
-public TarjetaCredito cantidadRetirar(int id) {
+public TarjetaCredito cantidadRetirar(String cantidadRetirar) {
 		
 		TarjetaCredito a= new TarjetaCredito();
 		try {
@@ -126,7 +129,7 @@ public TarjetaCredito cantidadRetirar(int id) {
       //2. preparar la consulta
         PreparedStatement ps = cx.prepareStatement("SELECT * FROM TARJETACREDITO WHERE id=?");
         // 2.1 setear los ?
-            ps.setInt(1, id);
+            ps.setString(1, cantidadRetirar);
       // 3, ejecutar la consulta
             ResultSet rs =ps.executeQuery();  
        //4. llenar el objeto pais.. con los datos de respuesta de BBDD..
@@ -153,7 +156,7 @@ public TarjetaCredito cantidadRetirar(int id) {
 	}
 	
 
-public TarjetaCredito cantidadPagar(int id) {
+public TarjetaCredito cantidadPagar(String cantidadPagar) {
 	
 	TarjetaCredito a= new TarjetaCredito();
 	try {
@@ -163,7 +166,7 @@ public TarjetaCredito cantidadPagar(int id) {
   //2. preparar la consulta
     PreparedStatement ps = cx.prepareStatement("SELECT * FROM TARJETACREDITO WHERE id=?");
     // 2.1 setear los ?
-        ps.setInt(1, id);
+        ps.setString(1, cantidadPagar);
   // 3, ejecutar la consulta
         ResultSet rs =ps.executeQuery();  
    //4. llenar el objeto pais.. con los datos de respuesta de BBDD..

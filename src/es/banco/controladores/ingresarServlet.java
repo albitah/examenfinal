@@ -44,7 +44,9 @@ public class ingresarServlet extends HttpServlet {
 				String id= b.ingresar(numero,numeroComprobacion, contraseña, cantidadIngresar);
 				
 				String men;
-				if (cantidadIngresar==5){
+				String cantidadIngresar2;
+				cantidadIngresar2= "5";
+				if (cantidadIngresar== cantidadIngresar2){
 					men= b.noAdmitido();
 					
 					request.setAttribute("mensaje",men);
